@@ -5,11 +5,14 @@
 <form action="/signin" method="POST">
   <input type="email" name="email" placeholder="Email">
   <input type="password" name="password" placeholder="Password">
-  <form action="">
-    <input type="checkbox" name="administrador" value="Administrador">CONTENT
-    <input type="checkbox" name="profesor" value="Profesor">CONTENT
-    <input type="checkbox" name="alumno" value="Alumno">CONTENT
-  </form>
+  <br>
+  <br>
+  <select name="rol">
+    <option value="Administrador">Administrador</option>
+    <option value="profesor">Profesor</option>
+    <option value="alumno">Alumno</option>
+  </select>
+  <br>
   <button class="btn btn-primary" type="submit">
     SignIn
   </button>
