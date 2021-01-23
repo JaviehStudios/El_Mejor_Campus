@@ -15,8 +15,9 @@ passport.deserializeUser(async (id, done) => {
 passport.use('local-signup', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
+  rolField: 'rol',
   passReqToCallback: true
-}, async (req, email, password, done) => {
+}, async (req, email, password, rol, done) => {
   const user = await User.findOne({'email': email})
   if(user) {
     return done(null, false, req.flash('signupMessage', 'The Email is already Taken.'));
@@ -24,6 +25,7 @@ passport.use('local-signup', new LocalStrategy({
     const newUser = new User();
     newUser.email = email;
     newUser.password = newUser.encryptPassword(password);
+    newUser.rol = rol;
     await newUser.save();
     done(null, newUser);
   }
