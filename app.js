@@ -7,7 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 const logger = require('morgan');
 
-
+/*Comentario*/
 
 var app = express();
 require('./database');
